@@ -1,0 +1,21 @@
+.SettingDiv {
+  font-size: 1.4rem; }
+
+.settingsDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%; }
+
+.settingDiv {
+  display: flex;
+  width: 60%;
+  justify-content: space-around;
+  margin-top: 32px;
+  font-size: 2rem; }
+
+.input {
+  margin-left: 32px;
+  margin-right: 32px;
+  font-size: 2rem; }

@@ -1,0 +1,21 @@
+.mainPage {
+  font-size: 1.4rem; }
+
+.infoBar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 32px; }
+
+.lifeBar {
+  margin-left: 32px;
+  margin-right: 32px;
+  width: 100px;
+  height: 20px;
+  display: inline-block;
+  background-color: blue;
+  opacity: 0.8;
+  text-align: left;
+  border-radius: 5px; }
+
+.lifeBarStatus {
+  border-radius: 10px; }
