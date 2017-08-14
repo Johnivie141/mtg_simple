@@ -16,6 +16,7 @@ componentDidMount(){
            <p>Welcome to the arena{(this.props &&this.props.player && this.props.player.name)?" "+this.props.player.name : ''}.</p> 
            <p>Summon creatures to defeat your foe.</p>
            <p>Victory will gain you power and fame.</p>
+           <p>Current Version: 0.5</p>
            
 
     </div>
