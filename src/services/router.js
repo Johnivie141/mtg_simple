@@ -24,7 +24,7 @@ export default (
 
 <Route exact path="/" component={Main} />
 <Route path="/land" component={Land} />
-
+<Route exact path="/home" component={Main} />
 <Route path="/about" component={About} />
 <Route path="/settings" component={Settings} />
 <Route path="/login" component={Login} />
