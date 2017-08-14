@@ -33,8 +33,10 @@ getWonCard(){
 }
  
 componentWillUnmount(){
-   if (this.props && this.props.newGame)
-    this.props.newGame();
+   if (this.props && this.props.newGame){
+      this.props.newGame();
+   }
+      
 }
 
  render(){

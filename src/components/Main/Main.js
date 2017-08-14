@@ -77,14 +77,17 @@ stateCheck(ownProps){
 
   if (ownProps !==null){
       if (ownProps && ownProps.settingsCheck===false){
-          this.props.getSetting();
+        
+          ownProps.getSetting();
       }
        if (ownProps.settingsCheck){   
         if (ownProps.player.deck===null){
            ownProps.getPlayerCards();
+         
          }
         if (ownProps.pc.deck===null){
             ownProps.getPCCards();
+            
         }
      
         if (ownProps.player.deck!==null && ownProps.player.hand===null  &&ownProps.pc.deck!==null){

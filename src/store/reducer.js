@@ -516,9 +516,12 @@ export default function reducer(state=initialState,action){
               newPlayerState = Object.assign({},state.player);
               newPCState=Object.assign({},state.pc);
               newPCState.life=state.settings.pcLifePoints;
+              newPCState.hand=null;
+              newPlayerState.hand=null;
               newPlayerState.life=state.settings.playerLifePoints;
-              
-              return Object.assign({},state,{endGame:false,message:''},{player:newPlayerState,pc:newPCState,phase:STARTSCREEN})           
+              // need to set up land cards
+              // need
+              return Object.assign({},state,{endGame:false,message:'',settingsCheck:false,phase:STARTSCREEN},{player:newPlayerState,pc:newPCState,phase:STARTSCREEN})           
             case GET_SETTING:
 
                 let newSetting = Object.assign({},state.settings);
@@ -606,7 +609,7 @@ export default function reducer(state=initialState,action){
             case DRAW_HAND:
            
                 // draw seven cards for each player
-                
+   
                  newPCState = Object.assign({},state.pc);
                  newPlayerState = Object.assign({},state.player);
                 if (newPCState.deck === null || newPlayerState.deck===null)
