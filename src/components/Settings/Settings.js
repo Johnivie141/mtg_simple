@@ -4,12 +4,16 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import {changeSetting} from './../../store/reducer'
 import './Settings.css';
-
+let currentValue=0;
 
  class Settings extends Component{
 
 
+
  render(){
+
+
+
   return (<div className="settingsDiv">
 
       <div className="settingDiv">
@@ -118,23 +122,24 @@ import './Settings.css';
        </div>   
       </div>
 
-
-
-      
+          
 
   
-           
-       
+
+
+
+
 
       
        </div>
    );
   }
+  
 }
 
 function mapStateToProps(state){
 
-console.log(state); 
+
     return state;
 
 

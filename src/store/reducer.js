@@ -283,14 +283,18 @@ export default function reducer(state=initialState,action){
 
             case CHANGE_SETTING:
                 let settingKey = action.payload.key;
-                let settingValue = action.payload.value;  
-                let newSettings= Object.assign({},state.settings)
-                newSettings[settingKey]=settingValue;
+                let settingValue = action.payload.value; 
+                if (Number(settingValue) >0){
+                  let newSettings= Object.assign({},state.settings)
+                  newSettings[settingKey]=settingValue;
 
-                localStorage.setItem(settingKey,JSON.stringify(settingValue));
+                  localStorage.setItem(settingKey,JSON.stringify(settingValue));
                 
-                return Object.assign({},state,{settings:newSettings});
-
+                  return Object.assign({},state,{settings:newSettings});
+                }
+                else{
+                    return state;
+                }
 
 
             case PC_TURN:

@@ -8,6 +8,9 @@ import './Combat.css';
 
 import jQuery from 'jquery';
 import 'jquery-ui-dist/jquery-ui.js';
+
+
+
 export class Combat extends Component{
     constructor(props){
         super(props);
@@ -113,15 +116,20 @@ componentWillReceiveProps(ownProps)
           className="pcCombatCreature cardImage" alt={card?card.name:""} src={card?card.imageUrl:''}  /></span>);
      
     }
-    
+
+   
   return (
-  <div className="combatPhase">
+
+  <div className="combatPhase"  >
 
 
      <div className="creatureDiv">
       <span className="pcCombatCreature">{pcCreature}</span>{pcExplosion}
       <span className="playerCombatCreature">{playerCreature}</span>
       </div>
+
+
+    
        </div>
    );
   }

@@ -3,7 +3,8 @@ import {connect} from 'react-redux'
 
 
 
-
+import skyImage from './../../backgrounds/sky.jpg'
+import beachImage from './../../backgrounds/beach.jpg'
 
 import './Main.css';
 
@@ -161,6 +162,12 @@ if (this.props){
      
        playerLifeWidth = `${playerLifeWidth}px`;
 }
+
+// var bgStyle={
+//     backgroundImage:  "url(" +skyImage + ")",
+//     backgroundSize: "contain",
+//     height:"100vh"
+// };
 
 if(!(this.props && this.props.player && this.props.player.hand))
    return (<div className="mainPage"></div>);
