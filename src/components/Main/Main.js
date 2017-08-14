@@ -3,9 +3,6 @@ import {connect} from 'react-redux'
 
 
 
-import skyImage from './../../backgrounds/sky.jpg'
-import beachImage from './../../backgrounds/beach.jpg'
-
 import './Main.css';
 
 
