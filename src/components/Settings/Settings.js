@@ -133,7 +133,8 @@ import './Settings.css';
 }
 
 function mapStateToProps(state){
- 
+
+console.log(state); 
     return state;
 
 

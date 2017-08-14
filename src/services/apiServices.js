@@ -15,8 +15,6 @@ export function getMagickCards(isPlayer){
            let pagenum = Math.floor(Math.random()*200);
            if (isPlayer) pagenum=0;
            let fullUrl = magickUrl + `?page=${pagenum}&types=creature|land`
-       
-
 
           return  axios.get(fullUrl).then((res) =>{
            let tmpCards=res.data.cards.filter(

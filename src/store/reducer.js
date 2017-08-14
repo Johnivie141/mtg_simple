@@ -1,6 +1,7 @@
 import {getMagickCards} from '../services/apiServices';
 
 import {canSelectCreature} from './../utils/utils';
+//import {EVEN_BATLE,UNEVEN_BATTLE,UNDEFENDED,getBattleTexts} from '../services/descriptiveText';
 
 
 export const SELECT_PHASE="SELECT";
@@ -367,25 +368,42 @@ export default function reducer(state=initialState,action){
                  
                  if (newPCState.combatCreature)
                  {
+                     // Player Won against defense
+                  
                    message = message  + newPCState.name +"'s ";
                     message =message + newPCState.combatCreature.name   + " " + verb + " unable to defend against ";
                     message =message +    possessiveName + " " +  newPlayerState.combatCreature.name +'.';
                  }
                  else{
+                     //Player Won against Undefended
                     message = message  + newPCState.name + ' ' + verb +" undefended against the attack of ";
                     message  = message + possessiveName + " " ;
-                    message = message + newPlayerState.combatCreature.name;   
+                    message = message + newPlayerState.combatCreature.name + ".";   
                  }
              }
              else if (playerDamage >0 && pcDamage<=0){
                  if (newPlayerState.combatCreature)
                  {
-                   
+                   //Computer Won Against Defended Player
                    message= message + possessiveName + ' ';
                     message = message + newPlayerState.combatCreature.name   +" " + verb + "  unable to defend against ";
                     message =message + newPCState.name   +"'s " +  newPCState.combatCreature.name +'.';
                  } 
                  else{
+
+                     // Computer Won Against Undefended Player
+                   
+                    //    let battletext= getBattleTexts("UNDEFENDED",{
+                    //     "LoserPossessive" :  possessiveName,
+                    //     "LoserName" :name,
+                    //     "LoserWas" :verb,
+                    //     "WinnerName" :newPCState.name,
+                    //     "WinnerPossesive": newPCState.name  + "'s",
+                    //     "LoserCreature": newPlayerState.combatCreature,
+                    //     "WinnerCreature": newPCState.combatCreature,
+                    //     "WinnerDativePronoun" : "him"
+
+                    //  })
                      
                      message=message  + name + ' ';                    
                     message = message + verb + " undefended against ";
@@ -478,8 +496,8 @@ export default function reducer(state=initialState,action){
                   newPlayerState.hand=[];
                   newPlayerState.playedCards=[];
                   
-                 // localStorage.setItem("playerCards",JSON.stringify(newPlayerState.deck));
-                //  localStorage.setItem("pcCards",JSON.stringify(newPCState.deck));
+                  localStorage.setItem("playerCards",JSON.stringify(newPlayerState.deck));
+                  localStorage.setItem("pcCards",JSON.stringify(newPCState.deck));
 
 
              }

@@ -155,6 +155,7 @@ if (this.props){
        pcLifeWidth = pcLife/pcMaxLife * 100 ;
        pcLifeWidth = `${pcLifeWidth}px`;
        playerLifeWidth = playerLife/playerMaxLife * 100 ;
+     
        playerLifeWidth = `${playerLifeWidth}px`;
 }
 
