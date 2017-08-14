@@ -29,5 +29,6 @@ export default (
 <Route path="/settings" component={Settings} />
 <Route path="/login" component={Login} />
 <Route path="/endgame" component={EndGame} />
+<Route  path="/" component={Main} />
 </Switch>);
 
