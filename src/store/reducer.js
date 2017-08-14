@@ -518,7 +518,7 @@ export default function reducer(state=initialState,action){
               newPCState.life=state.settings.pcLifePoints;
               newPlayerState.life=state.settings.playerLifePoints;
               
-              return Object.assign({},state,{endGame:false},{player:newPlayerState,pc:newPCState,phase:STARTSCREEN})           
+              return Object.assign({},state,{endGame:false,message:''},{player:newPlayerState,pc:newPCState,phase:STARTSCREEN})           
             case GET_SETTING:
 
                 let newSetting = Object.assign({},state.settings);
