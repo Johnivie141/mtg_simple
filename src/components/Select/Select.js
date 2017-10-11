@@ -17,7 +17,7 @@ export class Select extends Component{
 selectPlayerCard(event,index){
 // this function will select the player Card
 
- if (index > this.props.player.hand.length -1 )return ;
+ if (index > this.props.player.hand.length -1 || index <0 )return ;
  
  let card = this.props.player.hand[this.props.player.selectedPosition];
  // Check logic to see if this is a valid card to select

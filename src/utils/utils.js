@@ -11,7 +11,7 @@ export function canSelectCreature(creatureCard,LandCards){
         
          
          for (let i=0;i<landArray.length;i++){
-             if (landArray[i].colorIdentity.indexOf(x)!==-1 && autoSelect.indexOf(i)===-1){
+             if (landArray[i].colorIdentity && landArray[i].colorIdentity.indexOf(x)!==-1 && autoSelect.indexOf(i)===-1){
                  autoSelect.push(i);
                  success=true;
                  break;

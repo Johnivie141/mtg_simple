@@ -28,7 +28,7 @@ const PC_TURN="PC_TURN";
 const CHANGE_SETTING="CHANGE_SETTING";
 const GET_SETTING ="GET_SETTING";
 const NEW_GAME="NEW_GAME";
-
+const SET_VOICE="SET_VOICE";
 
 
 
@@ -36,6 +36,13 @@ const NEW_GAME="NEW_GAME";
 function pickACard(cards){
     let newCard =cards.splice(Math.floor(Math.random()*(cards.length -1)),1)[0];
 return newCard;
+}
+
+export function setVoice(newVoice){
+	return {
+		type:SET_VOICE,
+		payload:newVoice
+	};
 }
 
 export function login(name){
@@ -219,7 +226,8 @@ pc:{
     gamesWon:0,
     gamsLost:0,
     computerCanPlayLand:true,
-    wonCard:null
+    wonCard:null,
+    voice:null,
 }
 
 }
@@ -244,7 +252,10 @@ export default function reducer(state=initialState,action){
   let newReadyNextPhase=false;
        switch(action.type){
 
-  
+          case SET_VOICE:
+		      newPCState=Object.assign({},state.pc);
+                      newPCState.voice=action.payload;
+		      return Object.assign({},state,{pc:newPCState});
 
 
          //Initialize Card Decks
